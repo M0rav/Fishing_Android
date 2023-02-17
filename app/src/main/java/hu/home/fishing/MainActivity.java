@@ -1,6 +1,6 @@
 package hu.home.fishing;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -9,7 +9,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_profile:
                     frameLayout.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragmentContainer, new ProfileFragment()).commit();
+                            .replace(R.id.fragmentContainer, new RegisterFragment()).commit();
                     break;
             }
             drawerLayout.closeDrawer(GravityCompat.START);
