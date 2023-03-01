@@ -5,7 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class RequestHandler {
+public class   RequestHandler {
     private RequestHandler() {
     }
 

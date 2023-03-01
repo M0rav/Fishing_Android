@@ -14,6 +14,20 @@
         <entry key="..\:/Project/Android/app/src/main/res/layout/fragment_profile.xml" value="0.346875" />
         <entry key="..\:/Project/Android/app/src/main/res/layout/nav_header.xml" value="0.18697916666666667" />
         <entry key="..\:/Project/Android/app/src/main/res/menu/menu_items.xml" value="0.33" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3675" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/custom_edittext.xml" value="0.3625" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_baseline_person.xml" value="0.3635" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3675" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_lock.xml" value="0.3635" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_logout.xml" value="0.1965" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_main_page.xml" value="0.1965" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/drawable/ic_profile.xml" value="0.1965" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/layout/activity_sign_up.xml" value="0.3509963768115942" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/layout/fragment_register.xml" value="0.358695652173913" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/layout/nav_header.xml" value="0.358695652173913" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/menu/menu_items.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project/newAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3675" />
       </map>
     </option>
   </component>
