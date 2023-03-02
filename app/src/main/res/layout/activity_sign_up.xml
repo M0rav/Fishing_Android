@@ -1,112 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".SignUpActivity">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ITT LESZ A LOGO"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="26sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="ITT LESZ A LOGO"
+        android:textSize="26sp" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        >
+        app:cardElevation="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="24dp"
-            android:background="@drawable/custom_edittext">
-
+            android:background="@drawable/custom_edittext"
+            android:orientation="vertical"
+            android:padding="24dp">
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
-                android:textSize="36sp"
+                android:text="@string/regisztracio"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/blue"/>
-
+                android:textColor="@color/blue"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
 
             <EditText
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
-                android:padding="8dp"
+                android:drawableLeft="@drawable/ic_baseline_person"
+                android:drawablePadding="8dp"
                 android:hint="Email"
-                android:layout_marginTop="8dp"
-                android:drawableLeft="@drawable/ic_baseline_person"
-                android:drawablePadding="8dp"
-                android:textColor="@color/black"
                 android:inputType="textEmailAddress"
-                />
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
             <EditText
+                android:id="@+id/editTextUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/custom_edittext"
-                android:padding="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="Username"
+                android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person"
                 android:drawablePadding="8dp"
+                android:hint="Username"
+                android:padding="8dp"
                 android:textColor="@color/black" />
+
             <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/custom_edittext"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
-            android:hint="Password"
-            android:drawableLeft="@drawable/ic_lock"
-            android:drawablePadding="8dp"
-            android:textColor="@color/black"
-            android:inputType="textPassword"/>
-            <EditText
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/custom_edittext"
-                android:padding="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="Password Confirm"
+                android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_lock"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"
-                android:inputType="textPassword"/>
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
             <EditText
+                android:id="@+id/editTextPasswordConfirm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/custom_edittext"
-                android:padding="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="Phone number +36"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_lock"
+                android:drawablePadding="8dp"
+                android:hint="Password Confirm"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_local_phone"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"
-                android:inputType="textPassword"/>
+                android:hint="Phone number +36"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/regisztracio"
                 app:cornerRadius="10dp"
-                android:id="@+id/buttonRegister"
-                android:text="Sign up"
-                android:layout_gravity="center_horizontal"/>
+                app:backgroundTint="@color/blue"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,30 +126,29 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Már Rendelkezem Profillal"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
                     android:gravity="center"
-                    android:paddingRight="15sp"/>
+                    android:paddingRight="15sp"
+                    android:text="Már Rendelkezem Profillal"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cornerRadius="10dp"
-                    android:id="@+id/buttonlogin"
-                    android:text="Login"
+                    android:layout_gravity="
+"
                     android:paddingLeft="15dp"
-                    android:layout_gravity="center"/>
+                    android:text="@string/belepes"
+                    app:cornerRadius="10dp"
+                    app:backgroundTint="@color/blue"/>
 
 
             </LinearLayout>
 
 
-
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>

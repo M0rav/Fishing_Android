@@ -33,7 +33,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextUsername"
+
                     app:boxBackgroundColor="@color/transparent"
                     app:errorEnabled="true"
                     app:startIconDrawable="@drawable/ic_profile">
@@ -51,7 +51,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextPassword"
+
                     app:boxBackgroundColor="@color/transparent"
                     app:errorEnabled="true"
                     app:startIconDrawable="@drawable/ic_profile"
@@ -69,7 +69,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextEmail"
+
                     app:boxBackgroundColor="@color/transparent"
                     app:errorEnabled="true"
                     app:startIconDrawable="@drawable/ic_profile">
@@ -88,7 +88,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextPhoneNumber"
+
                     app:boxBackgroundColor="@color/transparent"
                     app:errorEnabled="true"
                     app:startIconDrawable="@drawable/ic_profile">
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cornerRadius="10dp"
-            android:id="@+id/buttonRegister"
+
             android:text="Regisztrácó"/>
     </LinearLayout>
 

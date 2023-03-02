@@ -73,7 +73,7 @@ public class RegisterFragment extends Fragment {
     }
 
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    static class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;
