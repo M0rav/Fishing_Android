@@ -8,12 +8,21 @@
     android:layout_gravity="center"
     tools:context=".SignUpActivity">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ITT LESZ A LOGO"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="26sp"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
+        app:cardElevation="20dp"
+        >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,6 +30,8 @@
             android:layout_gravity="center_horizontal"
             android:padding="24dp"
             android:background="@drawable/custom_edittext">
+
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,17 +42,105 @@
                 android:textStyle="bold"
                 android:textColor="@color/blue"/>
 
+
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/custom_edittext"
                 android:padding="8dp"
                 android:hint="Email"
+                android:layout_marginTop="8dp"
                 android:drawableLeft="@drawable/ic_baseline_person"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:inputType="textEmailAddress"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Username"
+                android:drawableLeft="@drawable/ic_baseline_person"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/custom_edittext"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="Password"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="8dp"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Password Confirm"
+                android:drawableLeft="@drawable/ic_lock"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Phone number +36"
+                android:drawableLeft="@drawable/ic_baseline_local_phone"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="10dp"
+                android:id="@+id/buttonRegister"
+                android:text="Sign up"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Már Rendelkezem Profillal"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:paddingRight="15sp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cornerRadius="10dp"
+                    android:id="@+id/buttonlogin"
+                    android:text="Login"
+                    android:paddingLeft="15dp"
+                    android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
+
+
+
 
     </androidx.cardview.widget.CardView>
 
