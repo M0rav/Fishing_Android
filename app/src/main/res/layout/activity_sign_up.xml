@@ -109,43 +109,22 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonRegister"
+                android:id="@+id/buttonRegisterFinal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/regisztracio"
                 app:cornerRadius="10dp"
-                app:backgroundTint="@color/blue"
-                />
+                app:backgroundTint="@color/blue" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:paddingRight="15sp"
-                    android:text="Már Rendelkezem Profillal"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonLogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="
-"
-                    android:paddingLeft="15dp"
-                    android:text="@string/belepes"
-                    app:cornerRadius="10dp"
-                    app:backgroundTint="@color/blue"/>
-
-
-            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Már rendelkezzem accal"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/blue" />
 
 
         </LinearLayout>

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //alapértelmezett actionbar (Toolbar) elrejtése
-        getSupportActionBar().hide();
+        // getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         //alapértelmezett sötétmód kikapcsolása
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         init();
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        /*
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.nav_main_page:
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
-        });
+        });*/
     }
 
     public void init(){
