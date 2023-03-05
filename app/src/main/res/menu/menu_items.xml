@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
     <group android:checkableBehavior="none">
         <item
@@ -8,13 +10,32 @@
             android:title="Fő oldal"/>
 
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_profile"
-            android:title="Profil"/>
+
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_share"
+            android:title="Térkép"/>
+
+
+        <item
+            android:id="@+id/nav_catches"
+            android:icon="@drawable/ic_share"
+            android:title="Fogások"/>
+        <item
+            android:id="@+id/nav_locations"
+            android:icon="@drawable/ic_share"
+            android:title="Horgászhely"/>
+
     </group>
 
-    <item android:title="Kommunikáció velünk">
+    <item android:title="Kapcsolat">
         <menu>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile"
+                android:title="Profil"/>
+
+
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"

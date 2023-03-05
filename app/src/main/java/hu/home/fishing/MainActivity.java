@@ -40,36 +40,49 @@ public class MainActivity extends AppCompatActivity {
         //alapértelmezett sötétmód kikapcsolása
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         init();
+
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        /*
+
         navigationView.setNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.nav_main_page:
                     frameLayout.setVisibility(View.GONE);
                     break;
-                case R.id.nav_profile:
+                case R.id.nav_map:
                     frameLayout.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragmentContainer, new RegisterFragment()).commit();
+                            .replace(R.id.fragmentContainer, new MapFragment()).commit();
                     break;
+                case R.id.nav_catches:
+                    frameLayout.setVisibility(View.VISIBLE);
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainer, new CatchesFragment()).commit();
+                    break;
+                case R.id.nav_locations:
+                    frameLayout.setVisibility(View.VISIBLE);
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainer, new LocationsFragment()).commit();
+                    break;
+                    // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
-        });*/
+        });
     }
 
-    public void init(){
+    public void init() {
         toolbar = findViewById(R.id.toolBar);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
         frameLayout = findViewById(R.id.fragmentContainer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout,
-                toolbar,R.string.nyitva, R.string.zarva);
+                toolbar, R.string.nyitva, R.string.zarva);
     }
+
     @Override
-    public void onBackPressed(){
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
