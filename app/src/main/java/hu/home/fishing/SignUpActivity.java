@@ -41,28 +41,41 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
                 String passwordConfirm = editTextPasswordConfirm.getText().toString().trim();
                 String phone = editTextPhoneNumber.getText().toString().trim();
-                if (username.isEmpty()) {
-                    editTextPassword.setError("Nem lehet üres a jelszó");
-                    return;
-                } else {
-                    editTextPassword.setError(null);
-                }if (password == passwordConfirm) {
-                    editTextPasswordConfirm.setError("Nem egyezik meg a jelszó");
-                    return;
-               } else {
-                    editTextPasswordConfirm.setError(null);
-                }
-                if (password.isEmpty()) {
-                    editTextPassword.setError("Nem lehet üres a jelszó");
-                    return;
-                } else {
-                    editTextPassword.setError(null);
-                }
                 if (email.isEmpty()) {
-                    editTextEmail.setError("Nem lehet üres a jelszó");
+                    editTextEmail.setError("Nem lehet üres a email");
                     return;
                 } else {
                     editTextEmail.setError(null);
+
+                    if (username.isEmpty()) {
+                        editTextUsername.setError("Nem lehet üres a felhasználónév");
+                        return;
+                    } else {
+                        editTextUsername.setError(null);
+                    }
+                    if (username.length() < 5 )
+                    {
+                        editTextUsername.setError("Minimum öt karakter kell a felhasználónál");
+                    } else {
+                        editTextUsername.setError(null);
+                    }
+                    if (password.isEmpty()) {
+                        editTextPassword.setError("Nem lehet üres a jelszó");
+                        return;
+                    } else {
+                        editTextPassword.setError(null);
+                    }
+                    if (password.length() < 8) {
+                        editTextPassword.setError("Minimum nyolc karakter kell a jelszónál");
+                    } else {
+                        editTextPassword.setError(null);
+                    }
+                    if (!password.equals(passwordConfirm)) {
+                        editTextPasswordConfirm.setError("Nem egyezik meg a jelszó");
+                        return;
+                    } else {
+                        editTextPasswordConfirm.setError(null);
+                    }
                 }
                 if (phone.isEmpty()) {
                     editTextPhoneNumber.setError("Nem lehet üresen hagyni a telefon számot");
