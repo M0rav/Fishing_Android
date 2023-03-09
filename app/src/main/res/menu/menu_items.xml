@@ -12,7 +12,7 @@
         <item
 
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_share"
+            android:icon="@drawable/ic_baseline_map_24"
             android:title="Térkép"/>
 
 
@@ -22,7 +22,7 @@
             android:title="Fogások"/>
         <item
             android:id="@+id/nav_locations"
-            android:icon="@drawable/ic_share"
+            android:icon="@drawable/ic_baseline_push_pin_24"
             android:title="Horgászhely"/>
 
     </group>

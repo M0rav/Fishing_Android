@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextPasswordConfirm, editTextUsername, editTextPhoneNumber;
-    private String URL = "http:// 192.168.63.119:3000/api/addUser";
+    private String URL = "http://10.0.2.2:3000/auth/users";
     //10.0.2.2:3000
     private MaterialButton buttonRegister, buttonlogin;
 
@@ -46,11 +46,10 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 } else {
                     editTextPassword.setError(null);
-                }
-                if (password != passwordConfirm) {
+                }if (password == passwordConfirm) {
                     editTextPasswordConfirm.setError("Nem egyezik meg a jelszó");
                     return;
-                } else {
+               } else {
                     editTextPasswordConfirm.setError(null);
                 }
                 if (password.isEmpty()) {
