@@ -8,13 +8,21 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
+    private String URLLogout = "http://10.0.2.2:3000/auth/logout";
 
     private FrameLayout frameLayout;
 
@@ -65,10 +74,23 @@ public class MainActivity extends AppCompatActivity {
                             .replace(R.id.fragmentContainer, new LocationsFragment()).commit();
                     break;
                     // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
+                case R.id.nav_logout:
+                    SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.commit();
+                    Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+                    startActivity(intent);
+                    finish();
+                    RequestTask task = new RequestTask(URLLogout,"DELETE");
+                    task.execute();
+                    //TODO KIjelentkezés
+
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+
     }
 
     public void init() {
@@ -88,5 +110,81 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+
+
+
+    private class RequestTask extends AsyncTask<Void, Void, Response> {
+        String requestUrl;
+        String requestType;
+        String requestParams;
+
+        public RequestTask(String requestUrl, String requestType, String requestParams) {
+            this.requestUrl = requestUrl;
+            this.requestType = requestType;
+            this.requestParams = requestParams;
+        }
+
+
+        public RequestTask(String requestUrl, String requestType) {
+            this.requestUrl = requestUrl;
+            this.requestType = requestType;
+        }
+
+        @Override
+        protected Response doInBackground(Void... voids) {
+            Response response = null;
+            try {
+                switch (requestType) {
+                    case "GET":
+                        response = RequestHandler.get(requestUrl);
+                        break;
+                    case "POST":
+                        response = RequestHandler.post(requestUrl, requestParams);
+                        break;
+                    case "PUT":
+                        response = RequestHandler.put(requestUrl, requestParams);
+                        break;
+                    case "DELETE":
+                        response = RequestHandler.delete(requestUrl + "/" + requestParams);
+                        break;
+                }
+            } catch (IOException e) {
+                Toast.makeText(MainActivity.this,
+                        e.toString(), Toast.LENGTH_SHORT).show();
+            }
+            return response;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(Response response) {
+            super.onPostExecute(response);
+            if (response.getResponseCode() >= 400) {
+                Toast.makeText(MainActivity.this,
+                        "Hiba történt a kilépés során", Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(MainActivity.this, "Sikeres kijelentkezés", Toast.LENGTH_SHORT).show();
+            }
+            switch (requestType) {
+                case "GET":
+
+                    break;
+                case "POST":
+
+                    break;
+                case "PUT":
+
+                    break;
+                case "DELETE":
+
+                    break;
+            }
+        }
     }
 }

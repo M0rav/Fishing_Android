@@ -25,7 +25,7 @@
             android:icon="@drawable/ic_baseline_push_pin_24"
             android:title="Horgászhely"/>
 
-    </group>
+
 
     <item android:title="Kapcsolat">
         <menu>
@@ -50,4 +50,5 @@
                 android:title="Kijelentkezés"/>
         </menu>
     </item>
+    </group>
 </menu>
