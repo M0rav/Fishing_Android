@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
     private String URLLogout = "http://10.0.2.2:3000/auth/logout";
-
+    private String tokenUser;
     private FrameLayout frameLayout;
 
     @Override
@@ -73,16 +73,18 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new LocationsFragment()).commit();
                     break;
-                    // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
+                // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                    Token tokenuser = new Token(sharedPreferences.getString("token", ""));
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.clear();
                     editor.commit();
                     Intent intent = new Intent(MainActivity.this, LogInActivity.class);
                     startActivity(intent);
                     finish();
-                    RequestTask task = new RequestTask(URLLogout,"DELETE");
+                    Gson json = new Gson();
+                    RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenuser));
                     task.execute();
                     //TODO KIjelentkezés
 
@@ -167,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
             if (response.getResponseCode() >= 400) {
                 Toast.makeText(MainActivity.this,
                         "Hiba történt a kilépés során", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, response.getContent(), Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(MainActivity.this, "Sikeres kijelentkezés", Toast.LENGTH_SHORT).show();
