@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/nav_main_page"
             android:icon="@drawable/ic_main_page"
             android:title="Fő oldal"/>
+        <item
+
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_baseline_calendar_month_24"
+            android:title="Naptár"/>
 
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_profile"
-            android:title="Profil"/>
-    </group>
 
-    <item android:title="Kommunikáció velünk">
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_baseline_map_24"
+            android:title="Térkép"/>
+
+
+        <item
+            android:id="@+id/nav_catches"
+            android:icon="@drawable/ic_share"
+            android:title="Fogások"/>
+        <item
+            android:id="@+id/nav_locations"
+            android:icon="@drawable/ic_baseline_push_pin_24"
+            android:title="Horgászhelyek"/>
+
+
+
+    <item android:title="Kapcsolat">
         <menu>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile"
+                android:title="Profil"/>
+
+
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"
@@ -29,4 +55,5 @@
                 android:title="Kijelentkezés"/>
         </menu>
     </item>
+    </group>
 </menu>
