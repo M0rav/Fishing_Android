@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_main_page:
                     frameLayout.setVisibility(View.GONE);
                     break;
+                case R.id.nav_calendar:
+                    frameLayout.setVisibility((View.VISIBLE));
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainer,new CalendarFragment()).commit();
+                    break;
                 case R.id.nav_map:
                     frameLayout.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction()
@@ -76,16 +81,17 @@ public class MainActivity extends AppCompatActivity {
                 // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    Token tokenuser = new Token(sharedPreferences.getString("token", ""));
+                    Token tokenUser = new Token(sharedPreferences.getString("token", ""));
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.clear();
                     editor.commit();
                     Intent intent = new Intent(MainActivity.this, LogInActivity.class);
                     startActivity(intent);
-                    finish();
                     Gson json = new Gson();
-                    RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenuser));
+                    RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();
+                    finish();
+
                     //TODO KIjelentkezés
 
             }

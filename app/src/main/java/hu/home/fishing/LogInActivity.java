@@ -128,6 +128,9 @@ public class LogInActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(LogInActivity.this, "Sikeres Bejelentkezés", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
             switch (requestType) {
                 case "GET":
@@ -139,9 +142,7 @@ public class LogInActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("token", token.getToken());
                     editor.commit();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
+
 
                     break;
                 case "PUT":

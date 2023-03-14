@@ -72,7 +72,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="Felhasználónév"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -111,7 +111,7 @@
                 android:drawableLeft="@drawable/ic_baseline_local_phone"
                 android:drawablePadding="8dp"
                 android:hint="Phone number +36"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Már rendelkezzem accal"
+                android:text="Már rendelkezzem felhasználóval"
                 app:cornerRadius="10dp"
                 app:backgroundTint="@color/blue" />
 

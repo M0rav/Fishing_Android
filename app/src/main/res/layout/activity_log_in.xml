@@ -52,7 +52,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person"
                 android:drawablePadding="8dp"
-                android:hint="Email"
+                android:hint="Felhasználónév"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
