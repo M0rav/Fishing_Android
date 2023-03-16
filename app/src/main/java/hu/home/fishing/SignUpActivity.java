@@ -167,6 +167,9 @@ public class SignUpActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(SignUpActivity.this, "Sikeres Regisztráció", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), LogInActivity.class);
+                startActivity(intent);
+                finish();
             }
             switch (requestType) {
                 case "GET":

@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
-    private String URLLogout = "http://10.0.2.2:3000/auth/logout";
-    private String tokenUser;
+    private String URLLogout = "http://10.0.2.2:3000/auth/logout/android";
+    private String tokentUser;
     private FrameLayout frameLayout;
 
     @Override
@@ -81,18 +81,12 @@ public class MainActivity extends AppCompatActivity {
                 // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    Token tokenUser = new Token(sharedPreferences.getString("token", ""));
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.clear();
-                    editor.commit();
-                    Intent intent = new Intent(MainActivity.this, LogInActivity.class);
-                    startActivity(intent);
+                    Token tokenUser = new Token(sharedPreferences.getString("token", null));
+
                     Gson json = new Gson();
                     RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();
                     finish();
-
-                    //TODO KIjelentkezés
 
             }
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -170,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             if (response.getResponseCode() >= 400) {
                 Toast.makeText(MainActivity.this,
                         "Hiba történt a kilépés során", Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, response.getContent(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, response.getResponseCode() + "", Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(MainActivity.this, "Sikeres kijelentkezés", Toast.LENGTH_SHORT).show();
@@ -186,7 +180,12 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                 case "DELETE":
-
+                    SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.commit();
+                    Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+                    startActivity(intent);
                     break;
             }
         }
