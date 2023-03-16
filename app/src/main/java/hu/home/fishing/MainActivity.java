@@ -142,19 +142,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Response doInBackground(Void... voids) {
             Response response = null;
+            SharedPreferences sharedPreferences = getSharedPreferences("Adatok",Context.MODE_PRIVATE);
             try {
                 switch (requestType) {
                     case "GET":
-                        response = RequestHandler.get(requestUrl);
-                        break;
-                    case "POST":
-                        response = RequestHandler.post(requestUrl, requestParams);
-                        break;
-                    case "PUT":
-                        response = RequestHandler.put(requestUrl, requestParams);
+                        response = RequestHandler.get(requestUrl,null);
                         break;
                     case "DELETE":
-                        response = RequestHandler.delete(requestUrl + "/" + requestParams);
+                        response = RequestHandler.delete(requestUrl,sharedPreferences.getString("token",null));
                         break;
                 }
             } catch (IOException e) {

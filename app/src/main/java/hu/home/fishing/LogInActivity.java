@@ -91,19 +91,20 @@ public class LogInActivity extends AppCompatActivity {
         @Override
         protected Response doInBackground(Void... voids) {
             Response response = null;
+            SharedPreferences sharedPreferences = getSharedPreferences("Adatok",Context.MODE_PRIVATE);
             try {
                 switch (requestType) {
                     case "GET":
-                        response = RequestHandler.get(requestUrl);
+                        response = RequestHandler.get(requestUrl, null);
                         break;
                     case "POST":
-                        response = RequestHandler.post(requestUrl, requestParams);
+                        response = RequestHandler.post(requestUrl, requestParams,null);
                         break;
                     case "PUT":
-                        response = RequestHandler.put(requestUrl, requestParams);
+                        response = RequestHandler.put(requestUrl, requestParams,null);
                         break;
                     case "DELETE":
-                        response = RequestHandler.delete(requestUrl + "/" + requestParams);
+                        response = RequestHandler.delete(requestUrl,sharedPreferences.getString("token",null));
                         break;
                 }
             } catch (IOException e) {

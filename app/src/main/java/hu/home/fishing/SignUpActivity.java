@@ -1,6 +1,8 @@
 package hu.home.fishing;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -130,19 +132,18 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         protected Response doInBackground(Void... voids) {
             Response response = null;
+            SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
             try {
+
                 switch (requestType) {
                     case "GET":
-                        response = RequestHandler.get(requestUrl);
+                        response = RequestHandler.get(requestUrl,null);
                         break;
                     case "POST":
-                        response = RequestHandler.post(requestUrl, requestParams);
-                        break;
-                    case "PUT":
-                        response = RequestHandler.put(requestUrl, requestParams);
+                        response = RequestHandler.post(requestUrl, requestParams,null);
                         break;
                     case "DELETE":
-                        response = RequestHandler.delete(requestUrl + "/" + requestParams);
+                        response = RequestHandler.delete(requestUrl,sharedPreferences.getString("token",null));
                         break;
                 }
             } catch (IOException e) {
