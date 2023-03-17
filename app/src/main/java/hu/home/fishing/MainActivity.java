@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
-    private String URLLogout = "http://10.0.2.2:3000/auth/logout/android";
+    private String URLLogout = "http://10.0.2.2:3000/auth/logout";
     private String tokentUser;
     private FrameLayout frameLayout;
 
@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
                     Token tokenUser = new Token(sharedPreferences.getString("token", null));
-
                     Gson json = new Gson();
                     RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();

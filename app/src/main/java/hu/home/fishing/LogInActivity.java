@@ -129,6 +129,11 @@ public class LogInActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(LogInActivity.this, "Sikeres Bejelentkezés", Toast.LENGTH_SHORT).show();
+                Token token = converter.fromJson(response.getContent(), Token.class);
+                SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("token", token.getToken());
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -138,11 +143,7 @@ public class LogInActivity extends AppCompatActivity {
 
                     break;
                 case "POST":
-                    Token token = converter.fromJson(response.getContent(), Token.class);
-                    SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("token", token.getToken());
-                    editor.commit();
+
 
 
                     break;
