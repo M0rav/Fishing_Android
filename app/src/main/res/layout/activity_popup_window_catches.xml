@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PopupWindowCatches"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_edittext">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Szeretnél felvenni egy új horgászatot"
+        android:textSize="20dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNewCatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Felvétel"
+            app:cornerRadius="10dp"
+            app:backgroundTint="@color/blue" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCatchesCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Mégse"
+            app:cornerRadius="10dp"
+            app:backgroundTint="@color/blue" />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

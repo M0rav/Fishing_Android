@@ -39,8 +39,8 @@ public class CatchesFragment extends Fragment {
     private void init(View view) {
         FishDisplayList = view.findViewById(R.id.caughtFishListView);
     }
+
     private List<String> getData() {
-        // Create a list of data for the adapter
         List<String> data = new ArrayList<>();
         data.add("Row 1, line 1\nRow 1, line 2\nRow 1, line 3");
         data.add("Row 2, line 1\nRow 2, line 2");

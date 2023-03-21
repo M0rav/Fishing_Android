@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -70,13 +71,17 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_catches:
                     frameLayout.setVisibility(View.VISIBLE);
+                    fishingCaughtsPopUpWindow();
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new CatchesFragment()).commit();
+
                     break;
                 case R.id.nav_locations:
                     frameLayout.setVisibility(View.VISIBLE);
+
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new LocationsFragment()).commit();
+
                     break;
                 // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();
                     finish();
+                    break;
 
             }
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -101,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
         frameLayout = findViewById(R.id.fragmentContainer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout,
                 toolbar, R.string.nyitva, R.string.zarva);
+    }
+    private void fishingCaughtsPopUpWindow(){
+        Intent popupwindow = new Intent(MainActivity.this, PopupWindowCatches.class);
+        startActivity(popupwindow);
     }
 
     @Override
