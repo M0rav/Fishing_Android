@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:weightSum="100"
+    android:layout_height="wrap_content">
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Title of the fishing"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/TitleCatchesTextView"
+        android:layout_weight="80" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="DayOftheFishing"
+            android:id="@+id/DayCatchesTextView"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="DayOftheFishing"
+            android:id="@+id/CatchesWeightTextView"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="DayOftheFishing"
+            android:id="@+id/CatcesPiecesTextView"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="Cordinetas or the place"
+            android:id="@+id/PlaceCatchesTextView"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

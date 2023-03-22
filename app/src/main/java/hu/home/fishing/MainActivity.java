@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
     private String URLLogout = "http://10.0.2.2:3000/auth/logout";
-    private String tokentUser;
+    private String tokenUser;
     private FrameLayout frameLayout;
 
     @Override
@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_catches:
                     frameLayout.setVisibility(View.VISIBLE);
-                    fishingCaughtsPopUpWindow();
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new CatchesFragment()).commit();
 
@@ -108,11 +107,6 @@ public class MainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this, drawerLayout,
                 toolbar, R.string.nyitva, R.string.zarva);
     }
-    private void fishingCaughtsPopUpWindow(){
-        Intent popupwindow = new Intent(MainActivity.this, PopupWindowCatches.class);
-        startActivity(popupwindow);
-    }
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

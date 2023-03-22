@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:gravity="center|top"
     tools:context=".CatchesFragment">
 
     <LinearLayout
@@ -31,8 +30,9 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/caughtFishListView"/>
+        android:layout_height="match_parent"
+        android:id="@+id/caughtFishListView"
+        android:layout_gravity="center"/>
 
 
 
