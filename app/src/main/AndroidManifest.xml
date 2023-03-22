@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CatchesAdding"
+            android:exported="false" />
+        <activity
             android:name=".PopupWindowCatches"
             android:exported="false" />
         <activity

@@ -17,7 +17,7 @@ public class FishingListAdpter extends ArrayAdapter<Fishing> {
     private Context fContext;
     int fResource;
 
-    public  FishingListAdpter(@NonNull Context context, int resource, ArrayList<Fishing> objects) {
+    public FishingListAdpter(@NonNull Context context, int resource, ArrayList<Fishing> objects) {
         super(context, resource, objects);
         this.fContext = context;
         fResource = resource;
@@ -34,15 +34,15 @@ public class FishingListAdpter extends ArrayAdapter<Fishing> {
         Double weightOfTheFishes = getItem(position).getWeightOfTheFishes();
         String placeOfTheFishing = getItem(position).getPlaceOfTheFishing();
 
-        Fishing fishing = new Fishing(titleOfFishing,startOfFishing,sumOfFishes,weightOfTheFishes,placeOfTheFishing);
+        Fishing fishing = new Fishing(titleOfFishing, startOfFishing, sumOfFishes, weightOfTheFishes, placeOfTheFishing);
         LayoutInflater inflater = LayoutInflater.from(fContext);
-        convertView = inflater.inflate(fResource,parent,false);
+        convertView = inflater.inflate(fResource, parent, false);
 
-        TextView tvTitle = (TextView) convertView.findViewById(R.id.TitleCatchesTextView);
-        TextView tvFishingStart = (TextView) convertView.findViewById(R.id.DayCatchesTextView);
-        TextView tvSumFish = (TextView) convertView.findViewById(R.id.CatchesWeightTextView);
-        TextView tvWeightFish = (TextView) convertView.findViewById(R.id.CatcesPiecesTextView);
-        TextView tvPlaceFish = (TextView) convertView.findViewById(R.id.PlaceCatchesTextView);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.TitleFishingTextView);
+        TextView tvFishingStart = (TextView) convertView.findViewById(R.id.DateFishingTW);
+        TextView tvSumFish = (TextView) convertView.findViewById(R.id.FishingSumWeightTV);
+        TextView tvWeightFish = (TextView) convertView.findViewById(R.id.FishingPiecesTextView);
+        TextView tvPlaceFish = (TextView) convertView.findViewById(R.id.PlaceFishingTextView);
 
         tvTitle.setText(titleOfFishing);
         tvFishingStart.setText(startOfFishing);
@@ -52,10 +52,4 @@ public class FishingListAdpter extends ArrayAdapter<Fishing> {
 
         return convertView;
     }
-
-    private void init(){
-
-
-    }
-
 }

@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:weightSum="100"
     android:layout_height="wrap_content">
+
+
     <TextView
         android:gravity="center"
         android:textAlignment="center"
         android:text="Title of the fishing"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/TitleCatchesTextView"
+        android:id="@+id/TitleFishingTextView"
         android:layout_weight="80" />
 
     <LinearLayout
@@ -24,20 +26,20 @@
             android:layout_height="20dp"
             android:gravity="center"
             android:text="DayOftheFishing"
-            android:id="@+id/DayCatchesTextView"/>
+            android:id="@+id/DateFishingTW"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:gravity="center"
             android:text="DayOftheFishing"
-            android:id="@+id/CatchesWeightTextView"/>
+            android:id="@+id/FishingSumWeightTV"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:gravity="center"
             android:text="DayOftheFishing"
-            android:id="@+id/CatcesPiecesTextView"/>
+            android:id="@+id/FishingPiecesTextView"/>
 
 
         <TextView
@@ -45,7 +47,7 @@
             android:layout_height="20dp"
             android:gravity="center"
             android:text="Cordinetas or the place"
-            android:id="@+id/PlaceCatchesTextView"/>
+            android:id="@+id/PlaceFishingTextView"/>
 
 
     </LinearLayout>

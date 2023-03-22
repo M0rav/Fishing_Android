@@ -1,6 +1,5 @@
 package hu.home.fishing;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,14 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
-import com.google.android.material.button.MaterialButton;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class CatchesFragment extends Fragment {
 
@@ -29,14 +23,14 @@ public class CatchesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_catches, container, false);
         init(view);
-        FishingListAdpter adapter = new FishingListAdpter(getContext(), R.layout.catches_adapter_view,fishinglist);
+        FishingListAdpter adapter = new FishingListAdpter(getContext(), R.layout.fishing_adapter_view,fishinglist);
         CatchesListView.setAdapter(adapter);
 
         //ON Selected iTem change to a new webpage where user can add fishes there
         CatchesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getContext(), MainActivity.class);
+                Intent intent = new Intent(getContext(), CatchesAdding.class);
                 startActivity(intent);
             }
         });
@@ -50,12 +44,13 @@ public class CatchesFragment extends Fragment {
         fishinglist.add(first);
         fishinglist.add(second);
         fishinglist.add(secondu);
+
         return  view;
     }
 
 
     private void init(View view) {
-        CatchesListView = view.findViewById(R.id.caughtFishListView);
+        CatchesListView = view.findViewById(R.id.FishingListView);
     }
 
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Spice Of The fish"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/SpiecesCatchtv"
+        android:layout_weight="33.3" />
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Weight Of the Fishes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/WeightCatchTW"
+        android:layout_weight="33.3" />
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Length Of The Fishes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/LengthFishTv"
+        android:layout_weight="33.3" />
+
+</LinearLayout>
