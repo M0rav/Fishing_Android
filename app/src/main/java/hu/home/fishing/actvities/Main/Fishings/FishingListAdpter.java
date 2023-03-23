@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main.Fishings;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Main.Fishings.Fishing;
 
 public class FishingListAdpter extends ArrayAdapter<Fishing> {
     private static final String TAG = "FishingListAdapter";

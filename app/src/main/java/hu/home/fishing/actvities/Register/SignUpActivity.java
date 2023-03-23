@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Register;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,11 +6,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.os.PersistableBundle;
 
 import android.view.View;
 
@@ -22,6 +19,11 @@ import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+
+import hu.home.fishing.actvities.Login.LogInActivity;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Main.RequestHandler;
+import hu.home.fishing.actvities.Main.Response;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextPasswordConfirm, editTextUsername, editTextPhoneNumber;

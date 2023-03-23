@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:orientation="vertical"
+    android:layout_gravity="center"
     android:gravity="center"
-    tools:context=".actvities.Login.LogInActivity">
+    tools:context=".actvities.Main.Fishings.CreateFishing">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="ITT LESZ A LOGO"
-        android:textSize="26sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -37,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/belepes"
+                android:text="Horgászat Felvétele"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="36sp"
@@ -45,54 +38,68 @@
 
 
             <EditText
-                android:id="@+id/editTextLogInUsername"
+                android:id="@+id/editTextTitleOfFishing"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/ic_baseline_person"
                 android:drawablePadding="8dp"
-                android:hint="Felhasználónév"
+                android:hint="Horgászat Címe"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
-
-
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/editTextPlaceOfTheFishing"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/ic_lock"
                 android:drawablePadding="8dp"
-                android:hint="Jelszó"
-                android:inputType="textPassword"
+                android:hint="Víztérkód"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/editDateOfTheFishing"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Horgászat Ideje"
+                android:inputType="datetime"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/belepes"
-                app:cornerRadius="10dp"
-                app:backgroundTint="@color/blue" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonRegister"
+                android:id="@+id/btnFishingCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/regisztracio"
+                android:text="Létrehozás"
                 app:cornerRadius="10dp"
                 app:backgroundTint="@color/blue" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonFishingCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Mégse"
+                    app:cornerRadius="10dp"
+                    app:backgroundTint="@color/blue" />
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
-
 
 </LinearLayout>

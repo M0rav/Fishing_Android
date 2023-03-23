@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,11 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
-import javax.security.auth.login.LoginException;
+import hu.home.fishing.actvities.Main.MainActivity;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Main.RequestHandler;
+import hu.home.fishing.actvities.Main.Response;
+import hu.home.fishing.actvities.Register.SignUpActivity;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText editTextLogInUsername, editTextPassword;

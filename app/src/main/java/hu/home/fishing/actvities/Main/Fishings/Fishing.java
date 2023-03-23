@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main.Fishings;
 
 import java.text.DateFormat;
 import java.util.Date;

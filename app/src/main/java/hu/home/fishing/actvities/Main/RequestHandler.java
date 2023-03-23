@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -9,7 +9,7 @@ public class   RequestHandler {
     private RequestHandler() {
     }
 
-    public static Response get(String url,String token) throws IOException {
+    public static Response get(String url, String token) throws IOException {
         HttpURLConnection conn = setupConnection(url,token);
         return getResponse(conn);
     }
@@ -76,4 +76,6 @@ public class   RequestHandler {
         is.close();
         return new Response(responseCode, builder.toString());
     }
+
+
 }

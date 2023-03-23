@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main;
 
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,13 +17,20 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+
+import hu.home.fishing.actvities.Main.Calendar.CalendarFragment;
+import hu.home.fishing.actvities.Main.Fishings.CatchesFragment;
+import hu.home.fishing.actvities.Main.Map.LocationsFragment;
+import hu.home.fishing.actvities.Main.Map.MapFragment;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Login.Token;
+import hu.home.fishing.actvities.Login.LogInActivity;
 
 public class MainActivity extends AppCompatActivity {
 
