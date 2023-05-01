@@ -1,5 +1,6 @@
 package hu.home.fishing.actvities.Main.Map;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -52,13 +54,25 @@ public class MapFragment extends Fragment {
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
                         // Add marker on map
                         googleMap.addMarker(markerOptions);
+                        GoogleMapOptions options = new GoogleMapOptions();
+                        options.mapType(GoogleMap.MAP_TYPE_SATELLITE)
+                                .compassEnabled(false)
+                                .rotateGesturesEnabled(false)
+                                .tiltGesturesEnabled(false);
+
                     }
                 });
             }
+
+
         });
+
+
         // Return view
         return view;
 
 
     };
+
+
 }

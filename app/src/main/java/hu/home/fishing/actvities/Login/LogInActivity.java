@@ -75,7 +75,7 @@ public class LogInActivity extends AppCompatActivity {
         buttonRegister = findViewById(R.id.buttonRegister);
     }
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;

@@ -27,47 +27,56 @@
             android:padding="24dp">
 
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Horgászat Felvétele"
+                android:text="Hal felvétele"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
+            <Spinner
+                android:id="@+id/spinnerFishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:outlineSpotShadowColor="@color/blue"
+                android:outlineAmbientShadowColor="@color/blue"
+                android:spinnerMode="dropdown"/>
 
             <EditText
-                android:id="@+id/editTextTitleOfFishing"
+                android:id="@+id/editTextWeightOfFish"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
-                android:hint="Horgászat Címe"
-                android:inputType="text"
+                android:hint="Súly (kg)"
+                android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/black" />
             <EditText
-                android:id="@+id/editTextPlaceOfTheFishing"
+                android:id="@+id/editTextfishLengt"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
-                android:hint="Víztérkód"
-                android:inputType="text"
+                android:hint="Hossza"
+                android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/black" />
             <EditText
-                android:id="@+id/editDateOfTheFishing"
+                android:id="@+id/editTextWaterDistrict"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
-                android:hint="Horgászat Ideje"
-                android:inputType="datetime"
+                android:hint="Helyszín"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -75,13 +84,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
                 android:gravity="center">
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFishingCreate"
+                android:id="@+id/btmnFishingCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:text="Létrehozás"
                 app:cornerRadius="10dp"
                 app:backgroundTint="@color/blue" />
@@ -89,7 +98,7 @@
                     android:id="@+id/buttonFishingCancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="right"
                     android:text="Mégse"
                     app:cornerRadius="10dp"
                     app:backgroundTint="@color/blue" />

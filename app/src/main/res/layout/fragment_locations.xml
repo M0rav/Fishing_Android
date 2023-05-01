@@ -3,12 +3,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actvities.Main.Map.LocationsFragment">
-
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".actvities.Questions.LocationsFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_edittext"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mire jó a naptár?"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A naptár lehetővé teszi a felhasználók számára,
+         hogy elmenthessék az általuk kiválasztott eseményt a naptárba, elösször egy címet kell adni az eseménynek, majd utána meg adni hogy mettől meddig tartson az esemény."
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="LOCATIONS"
-        android:textSize="30dp"/>
+        android:layout_height="wrap_content"
+        android:text="Mire jó a fogásinapló?"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A fogási napló oldalon lehetőség van a fogások rögzítésére.
+            A felhasználónak meg kell adnia a hal fajtáját, a súlyát és méretét, valamint azt, hogy hol fogta azt.M"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mire jó a Blog?"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A blog oldalon számos hasznos tipp és tanács található a horgászathoz, a halászathoz és a halak feldolgozásához."
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+            android:textSize="15sp"
+        android:textStyle="bold" />
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mire jó a elérhetőség?"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Az elérhetőség oldalon a fejlesztők elérhetők, hogy a felhasználók jelezni tudják, ha bármilyen problémába ütköznek az oldal használata során."
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+            android:textSize="15sp"
+        android:textStyle="bold" />
+    </LinearLayout>
 </FrameLayout>

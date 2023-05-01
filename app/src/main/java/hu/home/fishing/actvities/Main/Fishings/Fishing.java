@@ -2,60 +2,50 @@ package hu.home.fishing.actvities.Main.Fishings;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Fishing {
-    private String title;
-    private String startOfFishing;
-    private Integer piecesOfFishes;
-    private Double weightOfTheFishes;
-    private String placeOfTheFishing;
+    private String species;
+    private String weight;
+    private  String length;
+    private String location;
 
-
-    public Fishing(String title, String startOfFishing, Integer piecesOfFishes, Double weightOfTheFishes, String placeOfTheFishing) {
-        this.title = title;
-        this.startOfFishing = startOfFishing;
-        this.piecesOfFishes = piecesOfFishes;
-        this.weightOfTheFishes = weightOfTheFishes;
-        this.placeOfTheFishing = placeOfTheFishing;
+    public Fishing(String species, String weight, String length, String location) {
+        this.species = species;
+        this.weight = weight;
+        this.length = length;
+        this.location = location;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
-    public String getStartOfFishing() {
-        return startOfFishing;
+    public String getWeight() {
+        return weight;
     }
 
-    public void setStartOfFishing(String startOfFishing) {
-        this.startOfFishing = startOfFishing;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
-    public Integer getPiecesOfFishes() {
-        return piecesOfFishes;
+    public String getLength() {
+        return length;
     }
 
-    public void setPiecesOfFishes(Integer piecesOfFishes) {
-        this.piecesOfFishes = piecesOfFishes;
+    public void setLength(String length) {
+        this.length = length;
     }
 
-    public Double getWeightOfTheFishes() {
-        return weightOfTheFishes;
+    public String getLocation() {
+        return location;
     }
 
-    public void setWeightOfTheFishes(Double weightOfTheFishes) {
-        this.weightOfTheFishes = weightOfTheFishes;
-    }
-
-    public String getPlaceOfTheFishing() {
-        return placeOfTheFishing;
-    }
-
-    public void setPlaceOfTheFishing(String placeOfTheFishing) {
-        this.placeOfTheFishing = placeOfTheFishing;
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

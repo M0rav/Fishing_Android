@@ -26,7 +26,7 @@ import java.io.IOException;
 
 import hu.home.fishing.actvities.Main.Calendar.CalendarFragment;
 import hu.home.fishing.actvities.Main.Fishings.CatchesFragment;
-import hu.home.fishing.actvities.Main.Map.LocationsFragment;
+import hu.home.fishing.actvities.Questions.LocationsFragment;
 import hu.home.fishing.actvities.Main.Map.MapFragment;
 import hu.home.fishing.R;
 import hu.home.fishing.actvities.Login.Token;
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    Token tokenUser = new Token(sharedPreferences.getString("token", null));
+               Token tokenUser = new Token(sharedPreferences.getString("token", null));
                     Gson json = new Gson();
                     RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();

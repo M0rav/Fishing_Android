@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                     } else {
                         editTextPassword.setError(null);
                     }
-                    if (isValidCase(password) == false) {
+                    if (isValidCase(password) == true) {
                         editTextPassword.setError("Minimum 1 szám és egy nagybetű kell");
                         return;
                     } else {
@@ -118,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 Users user = new Users(username, email, password, phone);
                 Gson json = new Gson();
-                RequestTask task = new RequestTask(URL, "POST", json.toJson(user));
+                RequestTask task = new RequestTask(URL,"POST", json.toJson(user));
                 task.execute();
 
 
@@ -179,7 +179,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;
