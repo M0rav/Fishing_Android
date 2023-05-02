@@ -19,14 +19,44 @@
             android:text="Hozzáadás"
             app:cornerRadius="10dp"
             android:id="@+id/btnCatchAdd"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Törlés"
-            app:cornerRadius="10dp"
-            android:id="@+id/btnCatchDelete"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Halfaj"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="25" />
+
+        <TextView
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Helyszín"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="25" />
+
+        <TextView
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Hossz"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="25" />
+        <TextView
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Súly"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="25" />
+    </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"

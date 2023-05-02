@@ -7,12 +7,14 @@
     android:orientation="vertical"
     tools:context=".actvities.Main.Calendar.CalendarFragment">
 
-    <CalendarView
+
+    <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/simpleCalendarView"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
 
-
+   
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,6 +31,11 @@
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btmnFishingStartDate"
@@ -37,20 +44,29 @@
             android:text="Kezdési nap"
             app:cornerRadius="10dp"
             app:backgroundTint="@color/blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btmnFishingEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vége"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/blue" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:id="@+id/tvStartDate"
             android:text="Kezdési dátum"
-            android:textColor="@color/blue"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btmnFishingEndDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vége"
-            app:cornerRadius="10dp"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/blue" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,6 +74,8 @@
             android:text="A végződési dátum"
             android:id="@+id/tvEndDate"
             android:textColor="@color/blue"/>
+        </LinearLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btmnFishingDateCreate"
             android:layout_width="wrap_content"

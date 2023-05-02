@@ -10,20 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingBottom="10dp">
+        android:gravity="center">
 
         <EditText
             android:id="@+id/editTextPlaceOfTheFishing"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/custom_edittext"
             android:drawablePadding="8dp"
-            android:hint="Cím"
-            android:inputType="number"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+            android:hint="A jelölőnek szánt cím"
+            android:inputType="text"
+            android:textColor="@color/black"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btmnFishingCreate"
             android:layout_width="wrap_content"
@@ -37,13 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/google_map"
+        android:layout_marginTop="10dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
-
 </LinearLayout>

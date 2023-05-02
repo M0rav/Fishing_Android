@@ -68,7 +68,7 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mire jó a elérhetőség?"
+        android:text="Mire jó a térkép?"
         android:textAlignment="center"
         android:textColor="@color/blue"
         android:textSize="25sp"
@@ -77,7 +77,7 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Az elérhetőség oldalon a fejlesztők elérhetők, hogy a felhasználók jelezni tudják, ha bármilyen problémába ütköznek az oldal használata során."
+        android:text="A térkép segítségével a felhasználó fel tudja venni a számára fontos horgász helyeket."
         android:textAlignment="center"
         android:textColor="@color/blue"
             android:textSize="15sp"
