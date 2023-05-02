@@ -1,30 +1,30 @@
 package hu.home.fishing.actvities.Main.Map;
 
 public class Locations {
-    private Float xCordinate;
-    private Float yCordinate;
+    private Float xLoccord;
+    private Float yLoccord;
     private String comment;
 
-    public Locations(Float xCordinate, Float yCordinate, String comment) {
-        this.xCordinate = xCordinate;
-        this.yCordinate = yCordinate;
+    public Locations(Float xLoccord, Float yLoccord, String comment) {
+        this.xLoccord = xLoccord;
+        this.yLoccord = yLoccord;
         this.comment = comment;
     }
 
-    public Float getxCordinate() {
-        return xCordinate;
+    public Float getxLoccord() {
+        return xLoccord;
     }
 
-    public void setxCordinate(Float xCordinate) {
-        this.xCordinate = xCordinate;
+    public void setxLoccord(Float xLoccord) {
+        this.xLoccord = xLoccord;
     }
 
-    public Float getyCordinate() {
-        return yCordinate;
+    public Float getyLoccord() {
+        return yLoccord;
     }
 
-    public void setyCordinate(Float yCordinate) {
-        this.yCordinate = yCordinate;
+    public void setyLoccord(Float yLoccord) {
+        this.yLoccord = yLoccord;
     }
 
     public String getComment() {

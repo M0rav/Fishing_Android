@@ -1,7 +1,5 @@
 package hu.home.fishing.actvities.Main.Calendar;
 
-import java.util.Date;
-
 public class CalendarDates {
     private String title;
     private String start;
@@ -36,4 +34,5 @@ public class CalendarDates {
     public void setEnd(String end) {
         this.end = end;
     }
+
 }

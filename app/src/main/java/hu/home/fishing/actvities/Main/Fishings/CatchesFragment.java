@@ -74,7 +74,7 @@ public class CatchesFragment extends Fragment {
         btnAddNewFishing = view.findViewById(R.id.btnCatchAdd);
     }
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;
