@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.window.SplashScreen;
+
+import hu.home.fishing.actvities.Main.MainActivity;
+import hu.home.fishing.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 5000;

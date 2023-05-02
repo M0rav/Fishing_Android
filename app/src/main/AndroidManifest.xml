@@ -20,7 +20,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".actvities.Main.Fishings.CreateFishing"
+            android:exported="false" />
+        <activity
+            android:name=".actvities.Main.Fishings.CatchesAdding"
+            android:exported="false" />
+        <activity
+            android:name=".actvities.Login.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,10 +40,10 @@
             android:value="AIzaSyDeFyDBVZgnNK4C16rNTtGiIPKUrh5oeBk" />
 
         <activity
-            android:name=".SignUpActivity"
+            android:name=".actvities.Register.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".actvities.Login.LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,8 +52,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:name=".actvities.Main.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

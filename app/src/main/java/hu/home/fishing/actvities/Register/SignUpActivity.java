@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Register;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,11 +6,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.os.PersistableBundle;
 
 import android.view.View;
 
@@ -22,6 +19,12 @@ import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
+
+import hu.home.fishing.actvities.Login.LogInActivity;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Main.RequestHandler;
+import hu.home.fishing.actvities.Main.Response;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextPasswordConfirm, editTextUsername, editTextPhoneNumber;
@@ -43,11 +46,19 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
                 String passwordConfirm = editTextPasswordConfirm.getText().toString().trim();
                 String phone = editTextPhoneNumber.getText().toString().trim();
+
                 if (email.isEmpty()) {
                     editTextEmail.setError("Nem lehet üres a email");
                     return;
-                } else {
+                    } else {
                     editTextEmail.setError(null);
+
+                    if (isValid(email) == false) {
+                        editTextEmail.setError("Nem megfelelő az e-mail formátuma");
+                        return;
+                    } else {
+                        editTextEmail.setError(null);
+                    }
 
                     if (username.isEmpty()) {
                         editTextUsername.setError("Nem lehet üres a felhasználónév");
@@ -72,6 +83,18 @@ public class SignUpActivity extends AppCompatActivity {
                     } else {
                         editTextPassword.setError(null);
                     }
+                    if (isValidCase(password) == true) {
+                        editTextPassword.setError("Minimum 1 szám és egy nagybetű kell");
+                        return;
+                    } else {
+                        editTextPassword.setError(null);
+                    }
+                    if (isValidSpace(password) == false) {
+                        editTextPassword.setError("Maximum 20 karakter lehet és nem lehet szoköz");
+                        return;
+                    } else {
+                        editTextPassword.setError(null);
+                    }
                     if (!password.equals(passwordConfirm)) {
                         editTextPasswordConfirm.setError("Nem egyezik meg a jelszó");
                         return;
@@ -85,10 +108,20 @@ public class SignUpActivity extends AppCompatActivity {
                 } else {
                     editTextPhoneNumber.setError(null);
                 }
+                if (phone.length() < 7) {
+                    editTextPhoneNumber.setError("Nem megfelelő a telefonszám formátuma");
+                    return;
+                } else {
+                    editTextPhoneNumber.setError(null);
+                }
+
+
                 Users user = new Users(username, email, password, phone);
                 Gson json = new Gson();
-                RequestTask task = new RequestTask(URL, "POST", json.toJson(user));
+                RequestTask task = new RequestTask(URL,"POST", json.toJson(user));
                 task.execute();
+
+
             }
         });
         buttonlogin.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +132,9 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
+
 
     private void init() {
         editTextPasswordConfirm = findViewById(R.id.editTextPasswordConfirm);
@@ -111,8 +146,40 @@ public class SignUpActivity extends AppCompatActivity {
         buttonlogin = findViewById(R.id.buttonBack);
     }
 
+    private boolean isValid(String email){
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+        return pat.matcher(email).matches();
+    }
+    private boolean isValidCase(String email){
+        String emailRegex = "^(?=.*[0-9])"
+                + "(?=.*[a-z])(?=.*[A-Z])";
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+
+        return pat.matcher(email).matches();
+    }
+    //8-20 karakter  + szoköz
+    private boolean isValidSpace(String email){
+        String emailRegex = "(?=\\S+$).{8,20}$";
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+
+        return pat.matcher(email).matches();
+    }
+
+
+
+
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;

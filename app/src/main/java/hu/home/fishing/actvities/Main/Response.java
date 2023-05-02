@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main;
 
 public class Response {
 

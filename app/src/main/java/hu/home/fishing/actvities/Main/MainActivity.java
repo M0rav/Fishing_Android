@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Main;
 
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -24,14 +24,22 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
+import hu.home.fishing.actvities.Main.Calendar.CalendarFragment;
+import hu.home.fishing.actvities.Main.Fishings.CatchesFragment;
+import hu.home.fishing.actvities.Questions.LocationsFragment;
+import hu.home.fishing.actvities.Main.Map.MapFragment;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Login.Token;
+import hu.home.fishing.actvities.Login.LogInActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
-    private String URLLogout = "http://10.0.2.2:3000/auth/logout/android";
-    private String tokentUser;
+    private String URLLogout = "http://10.0.2.2:3000/auth/logout";
+    private String tokenUser;
     private FrameLayout frameLayout;
 
     @Override
@@ -72,21 +80,24 @@ public class MainActivity extends AppCompatActivity {
                     frameLayout.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new CatchesFragment()).commit();
+
                     break;
                 case R.id.nav_locations:
                     frameLayout.setVisibility(View.VISIBLE);
+
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, new LocationsFragment()).commit();
+
                     break;
                 // KAPCSOLAT alatti dolgok lekezelése és profil kijelntkeztetése
                 case R.id.nav_logout:
                     SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    Token tokenUser = new Token(sharedPreferences.getString("token", null));
-
+               Token tokenUser = new Token(sharedPreferences.getString("token", null));
                     Gson json = new Gson();
                     RequestTask task = new RequestTask(URLLogout, "DELETE", json.toJson(tokenUser));
                     task.execute();
                     finish();
+                    break;
 
             }
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -103,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this, drawerLayout,
                 toolbar, R.string.nyitva, R.string.zarva);
     }
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

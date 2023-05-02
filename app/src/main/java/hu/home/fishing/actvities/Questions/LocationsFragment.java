@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Questions;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+import hu.home.fishing.R;
 
 
 public class LocationsFragment extends Fragment {

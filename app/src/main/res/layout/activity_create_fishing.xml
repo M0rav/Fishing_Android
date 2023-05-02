@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".actvities.Main.Fishings.CreateFishing">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom_edittext"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hal felvétele"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerFishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:outlineSpotShadowColor="@color/blue"
+                android:outlineAmbientShadowColor="@color/blue"
+                android:spinnerMode="dropdown"/>
+
+            <EditText
+                android:id="@+id/editTextWeightOfFish"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Súly (kg)"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/editTextfishLengt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Hossza"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/editTextWaterDistrict"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Helyszín"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:gravity="center">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btmnFishingCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Létrehozás"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/blue" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonFishingCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Mégse"
+                    app:cornerRadius="10dp"
+                    app:backgroundTint="@color/blue" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="lavender">#8692f7</color>
-    <color name="blue">#007fff</color>
+    <!-- Egyezik a weboldal-->
+    <color name="blue">#0099ff</color>
+    <color name="green">#5cb85c</color>
 </resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="FogásFaja"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/SpiecesCatchtv"
+        android:layout_weight="25" />
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Fogás Súlya"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/WeightCatchTW"
+        android:layout_weight="25" />
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Fogás Hossza"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/LengthFishTv"
+        android:layout_weight="25" />
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Fogás helye"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/PlaceFishTv"
+        android:layout_weight="25" />
+
+</LinearLayout>

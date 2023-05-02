@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MapFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".actvities.Main.Map.MapFragment">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MAP"
-        android:textSize="30sp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/editTextPlaceOfTheFishing"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="A jelölőnek szánt cím"
+            android:inputType="text"
+            android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btmnFishingCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Létrehozás"
+            app:cornerRadius="10dp"
+            app:backgroundTint="@color/blue" />
+    </LinearLayout>
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/google_map"
+        android:layout_marginTop="10dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"/>
-
-</FrameLayout>
+</LinearLayout>

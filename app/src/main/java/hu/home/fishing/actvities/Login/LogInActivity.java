@@ -1,4 +1,4 @@
-package hu.home.fishing;
+package hu.home.fishing.actvities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,11 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
-import javax.security.auth.login.LoginException;
+import hu.home.fishing.actvities.Main.MainActivity;
+import hu.home.fishing.R;
+import hu.home.fishing.actvities.Main.RequestHandler;
+import hu.home.fishing.actvities.Main.Response;
+import hu.home.fishing.actvities.Register.SignUpActivity;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText editTextLogInUsername, editTextPassword;
@@ -71,7 +75,7 @@ public class LogInActivity extends AppCompatActivity {
         buttonRegister = findViewById(R.id.buttonRegister);
     }
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;
@@ -129,6 +133,11 @@ public class LogInActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(LogInActivity.this, "Sikeres Bejelentkezés", Toast.LENGTH_SHORT).show();
+                Token token = converter.fromJson(response.getContent(), Token.class);
+                SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("token", token.getToken());
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -138,11 +147,7 @@ public class LogInActivity extends AppCompatActivity {
 
                     break;
                 case "POST":
-                    Token token = converter.fromJson(response.getContent(), Token.class);
-                    SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("token", token.getToken());
-                    editor.commit();
+
 
 
                     break;
