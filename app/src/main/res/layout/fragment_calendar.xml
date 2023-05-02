@@ -67,7 +67,15 @@
             android:text="Kezdési dátum"
             android:textColor="@color/blue" />
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:text=" - "
+                android:textColor="@color/blue" />
+
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"

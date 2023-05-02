@@ -105,6 +105,8 @@ public class MapFragment extends Fragment {
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng latLng) {
+                        MapFragment.RequestTask taskGet = new MapFragment.RequestTask(GETURL,"GET",null);
+                        taskGet.execute();
                         // When clicked on map
                         // Initialize marker options
                         MarkerOptions markerOptions=new MarkerOptions();

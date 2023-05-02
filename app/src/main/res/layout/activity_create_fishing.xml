@@ -54,7 +54,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
                 android:hint="Súly (kg)"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:padding="8dp"
                 android:textColor="@color/black" />
             <EditText

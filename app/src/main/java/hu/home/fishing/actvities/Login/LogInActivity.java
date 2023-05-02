@@ -129,7 +129,7 @@ public class LogInActivity extends AppCompatActivity {
             Gson converter = new Gson();
             if (response.getResponseCode() >= 400) {
                 Toast.makeText(LogInActivity.this,
-                        "Hiba történt a belépés során!", Toast.LENGTH_SHORT).show();
+                        "Hibás felhasznáónév vagy jelszó!", Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(LogInActivity.this, "Sikeres Bejelentkezés", Toast.LENGTH_SHORT).show();
