@@ -32,4 +32,4 @@ nyissunk meg egy másik Visual Studio Code szerkesztőt, majd másoljuk be a kö
 
 Ha minden lépést sikeresen végrehajtottunk, akkor elérhető lesz a weboldalunk a böngészőben, ahol tesztelhetjük és használhatjuk a funkcióit.
 
-Youtube bemutató videó: https://youtu.be/NIioBBsaLtg
+Youtube bemutató videó: https://youtu.be/REGm77aYhjQ
