@@ -11,7 +11,11 @@ A főoldalon bejelentkezés után található a térkép, ahol a felhasználók 
 
 A naptár oldalon a felhasználók új eseményeket vehetnek fel, amelyekhez meg kell adni az esemény címét, kezdési és befejezési időpontot, majd elmenthetik azokat. A fogási napló oldalon lehetőség van a fogások rögzítésére. A felhasználónak meg kell adnia a hal fajtáját, a súlyát és méretét, valamint azt, hogy hol fogta azt.
 
+
 A blog oldalon számos hasznos tipp és tanács található a horgászathoz, a halászathoz és a halak feldolgozásához. A GYIK oldalon a felhasználók számára bemutatják az oldal használatát, a lehetőségeket és az esetleges kérdésekre adnak választ.
+![image](https://user-images.githubusercontent.com/112927855/235770629-3ae56f42-027e-417c-a744-8ac82bd15343.png)
+![image](https://user-images.githubusercontent.com/112927855/235770728-edf782a9-3af9-454a-adf5-5ed5149862d4.png)
+![image](https://user-images.githubusercontent.com/112927855/235770788-d427c376-e013-4699-b30a-7e2817a790c9.png)
 
 
 ## Az android applikácio futtatása
