@@ -13,9 +13,11 @@ A naptár oldalon a felhasználók új eseményeket vehetnek fel, amelyekhez meg
 
 
 A blog oldalon számos hasznos tipp és tanács található a horgászathoz, a halászathoz és a halak feldolgozásához. A GYIK oldalon a felhasználók számára bemutatják az oldal használatát, a lehetőségeket és az esetleges kérdésekre adnak választ.
-![image](https://user-images.githubusercontent.com/112927855/235770629-3ae56f42-027e-417c-a744-8ac82bd15343.png)
-![image](https://user-images.githubusercontent.com/112927855/235770728-edf782a9-3af9-454a-adf5-5ed5149862d4.png)
-![image](https://user-images.githubusercontent.com/112927855/235770788-d427c376-e013-4699-b30a-7e2817a790c9.png)
+
+![image](https://user-images.githubusercontent.com/112927855/235770921-1a86f81c-cf42-410b-bf51-e381b4cca2b8.png)
+![image](https://user-images.githubusercontent.com/112927855/235770992-ea06c102-7307-4c00-8557-3efd55ae5aea.png)
+![image](https://user-images.githubusercontent.com/112927855/235771028-b5e58d02-f369-458c-bb31-aa3210026d09.png)
+![image](https://user-images.githubusercontent.com/112927855/235771067-6221a90c-9c22-4a6e-affb-4a0f6155577c.png)
 
 
 ## Az android applikácio futtatása
