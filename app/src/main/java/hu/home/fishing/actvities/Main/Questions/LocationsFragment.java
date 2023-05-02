@@ -1,4 +1,4 @@
-package hu.home.fishing.actvities.Questions;
+package hu.home.fishing.actvities.Main.Questions;
 
 import android.os.Bundle;
 

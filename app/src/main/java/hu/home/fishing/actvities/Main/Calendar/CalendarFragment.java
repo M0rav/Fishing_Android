@@ -2,40 +2,42 @@ package hu.home.fishing.actvities.Main.Calendar;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.net.URL;
+import java.lang.reflect.Type;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import hu.home.fishing.R;
-import hu.home.fishing.actvities.Main.Fishings.CatchesFragment;
-import hu.home.fishing.actvities.Main.Fishings.CreateFishing;
 import hu.home.fishing.actvities.Main.RequestHandler;
 import hu.home.fishing.actvities.Main.Response;
-import hu.home.fishing.actvities.Register.SignUpActivity;
-import hu.home.fishing.actvities.Register.Users;
 
 
 public class CalendarFragment extends Fragment {
@@ -44,7 +46,9 @@ public class CalendarFragment extends Fragment {
     private TextView tvStartDateShow, tvEndDateShow;
     private Date selectedStartDate,selectedEndDate;
     private EditText titleOfDate;
-    private String URL = "http://10.0.2.2:3000/calendar/add";
+    private ArrayList<CalendarDates> datesFishesArrayList = new ArrayList<>();
+    private String URLPOST = "http://10.0.2.2:3000/calendar/add";
+    private String URL = "http://10.0.2.2:3000/calendar/info";
 
 
     @Override
@@ -52,15 +56,11 @@ public class CalendarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendar, container, false);
         init(view);
-        setCAlendar();
-        simpleCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                // display the selected date by using a toast
-                Toast.makeText(getContext(), dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
-            }
-        });
-
+        Context context = requireActivity().getApplicationContext();
+        SharedPreferences sharedPreferencese = context.getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+        Gson json = new Gson();
+        CalendarFragment.RequestTask task = new CalendarFragment.RequestTask(URL,"GET",null);
+        task.execute();
         btnPickStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +84,7 @@ public class CalendarFragment extends Fragment {
                                 selectedDate.set(year, monthOfYear, dayOfMonth);
                                 CalendarFragment.this.selectedStartDate = selectedDate.getTime();
                                 selectedDate = Calendar.getInstance();
-                                selectedStartDate = selectedDate.getTime();
+
                             }
                         },
                         // on below line we are passing year, month and day for selected date in our date picker.
@@ -119,6 +119,7 @@ public class CalendarFragment extends Fragment {
                                 selectedDate = Calendar.getInstance();
 
 
+
                             }
                         },
                         // on below line we are passing year, month and day for selected date in our date picker.
@@ -144,7 +145,7 @@ public class CalendarFragment extends Fragment {
                 } else {
                     titleOfDate.setError(null);
                 }
-              /*  if (start.isEmpty()) {
+               if (start.isEmpty()) {
                     titleOfDate.setError("Válassz kérlek kezdési dátumot");
                     return;
                 } else {
@@ -156,13 +157,13 @@ public class CalendarFragment extends Fragment {
                 } else {
                     titleOfDate.setError(null);
                 }
-*/
+
                 CalendarDates calendar = new CalendarDates(title,start,end);
                 Gson json = new Gson();
-                Toast.makeText(getActivity(), ""+calendar.getStart(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(), ""+calendar.getEnd(), Toast.LENGTH_SHORT).show();
-                RequestTask task = new RequestTask(URL,"POST", json.toJson(calendar));
+                RequestTask task = new RequestTask(URLPOST,"POST", json.toJson(calendar));
                 task.execute();
+                CalendarFragment.RequestTask tasks = new CalendarFragment.RequestTask(URL,"GET",null);
+                tasks.execute();
             }
         });
 
@@ -170,6 +171,8 @@ public class CalendarFragment extends Fragment {
         // Inflate the layout for this fragment
        return view;
     }
+
+
     private void init(View view){
         simpleCalendarView = view.findViewById(R.id.simpleCalendarView);
         btnPickStartDate = view.findViewById(R.id.btmnFishingStartDate);
@@ -181,11 +184,8 @@ public class CalendarFragment extends Fragment {
 
     }
 
-    private void setCAlendar() {
-        simpleCalendarView.setFirstDayOfWeek(2);
-    }
 
-    private class RequestTask extends AsyncTask<Void, Void, Response> {
+    public class RequestTask extends AsyncTask<Void, Void, Response> {
         String requestUrl;
         String requestType;
         String requestParams;
@@ -208,22 +208,21 @@ public class CalendarFragment extends Fragment {
             Context context = requireActivity().getApplicationContext();
             SharedPreferences sharedPreferencese = context.getSharedPreferences("Adatok", Context.MODE_PRIVATE);
             try {
+
                 switch (requestType) {
                     case "GET":
-                        response = RequestHandler.get(requestUrl, null);
+                        response = RequestHandler.get(requestUrl,sharedPreferencese.getString("token",null));
                         break;
                     case "POST":
-                        response = RequestHandler.post(requestUrl, requestParams, sharedPreferencese.getString("token",null));
-                        break;
-                    case "PUT":
-                        response = RequestHandler.put(requestUrl, requestParams, null);
+                        response = RequestHandler.post(requestUrl, requestParams,sharedPreferencese.getString("token",null));
                         break;
                     case "DELETE":
-                        response = RequestHandler.delete(requestUrl + "/" + requestParams, null);
+                        response = RequestHandler.delete(requestUrl,null);
                         break;
                 }
             } catch (IOException e) {
-
+                Toast.makeText(getActivity(),
+                        e.toString(), Toast.LENGTH_SHORT).show();
             }
             return response;
         }
@@ -236,15 +235,62 @@ public class CalendarFragment extends Fragment {
         @Override
         protected void onPostExecute(Response response) {
             super.onPostExecute(response);
-            if (response.getResponseCode() >= 400) {
-                Toast.makeText(getActivity(), ""+response.getResponseCode(), Toast.LENGTH_SHORT).show();
+
+            if (response.getResponseCode() >= 401) {
+                Toast.makeText(getActivity(),
+                        "Hiba történt!"+response.getResponseCode(), Toast.LENGTH_SHORT).show();
 
             } else {
-                Toast.makeText(getActivity(), "Sikeresen létrehozva", Toast.LENGTH_SHORT).show();
 
             }
             switch (requestType) {
                 case "GET":
+
+                    Gson gson = new Gson();
+                    String json = response.getContent();
+                    Type fishingDateType = new TypeToken<List<CalendarDates>>() {}.getType();
+                    List<CalendarDates> calendars = gson.fromJson(json, fishingDateType);
+                    List<EventDay> events = new ArrayList<>();
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                    for (CalendarDates calendar : calendars) {
+                        try {
+                            Date startDate = sdf.parse(calendar.getStart());
+                            Date endDate = sdf.parse(calendar.getEnd());
+                            String title = calendar.getTitle();
+                            // Create a Calendar instance and set the date range for the event
+                            Calendar startCalendar = Calendar.getInstance();
+                            startCalendar.setTime(startDate);
+                            Calendar endCalendar = Calendar.getInstance();
+                            endCalendar.setTime(endDate);
+/*
+                            String mydate =  "2023-05-06";
+                            Calendar mylittleCal = Calendar.getInstance();
+                            mylittleCal.setTime(sdf.parse(mydate));
+                            events.add(new EventDay(mylittleCal,R.color.purple_500));
+
+                            String mydates =  "2023-05-07";
+                            Calendar mylittleCala = Calendar.getInstance();
+                            mylittleCal.setTime(sdf.parse(mydates));
+                            events.add(new EventDay(mylittleCala,R.color.purple_500));
+*/
+                            // Set the event color to purple for all the days between the start and end date
+                            while (!startCalendar.after(endCalendar)) {
+                                Calendar tempCal = Calendar.getInstance();
+                                tempCal.setTime(startCalendar.getTime());
+                                events.add(new EventDay(tempCal, R.color.purple_500));
+                                startCalendar.add(Calendar.SECOND, 86400);
+                            }
+
+
+                        } catch (ParseException e) {
+                            // Handle any errors that occur while parsing the dates
+                            e.printStackTrace();
+                        }
+                    }
+                    simpleCalendarView.setEvents(events);
+
+
 
                     break;
                 case "POST":
@@ -258,9 +304,8 @@ public class CalendarFragment extends Fragment {
                     break;
             }
         }
-
-
     }
+
 }
 
 

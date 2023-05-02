@@ -26,7 +26,7 @@ import java.io.IOException;
 
 import hu.home.fishing.actvities.Main.Calendar.CalendarFragment;
 import hu.home.fishing.actvities.Main.Fishings.CatchesFragment;
-import hu.home.fishing.actvities.Questions.LocationsFragment;
+import hu.home.fishing.actvities.Main.Questions.LocationsFragment;
 import hu.home.fishing.actvities.Main.Map.MapFragment;
 import hu.home.fishing.R;
 import hu.home.fishing.actvities.Login.Token;

@@ -23,9 +23,6 @@
             android:name=".actvities.Main.Fishings.CreateFishing"
             android:exported="false" />
         <activity
-            android:name=".actvities.Main.Fishings.CatchesAdding"
-            android:exported="false" />
-        <activity
             android:name=".actvities.Login.SplashScreenActivity"
             android:exported="true">
             <intent-filter>

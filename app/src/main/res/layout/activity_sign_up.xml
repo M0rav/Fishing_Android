@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="ITT LESZ A LOGO"
+        android:text="Fogj Ki Ha Tudsz!"
         android:textSize="26sp" />
 
     <androidx.cardview.widget.CardView

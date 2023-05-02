@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".actvities.Questions.LocationsFragment">
+    tools:context=".actvities.Main.Questions.LocationsFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

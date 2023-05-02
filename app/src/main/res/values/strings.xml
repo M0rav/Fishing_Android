@@ -7,4 +7,26 @@
     <string name="valasztas">Válassz halfajt</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="material_calendar_monday">H</string>
+    <string name="material_calendar_tuesday">K</string>
+    <string name="material_calendar_wednesday">SZ</string>
+    <string name="material_calendar_thursday">CS</string>
+    <string name="material_calendar_friday">P</string>
+    <string name="material_calendar_saturday">SZ</string>
+    <string name="material_calendar_sunday">V</string>
+
+    <array name="material_calendar_months_array">
+        <item>Január</item>
+        <item>Február</item>
+        <item>Március</item>
+        <item>Április</item>
+        <item>Május</item>
+        <item>Június</item>
+        <item>Július</item>
+        <item>Augusztus</item>
+        <item>Szeptember</item>
+        <item>Október</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
 </resources>
