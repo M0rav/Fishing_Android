@@ -31,7 +31,7 @@ Nyissuk meg a Visual Studio Code szerkesztőt, majd másoljuk be a következő l
 
 ### Harmadik lépés
 
-nyissunk meg az Android Studiot, majd másoljuk be a következő linket: https://github.com/dogbox36/FrontendFishing.git. Mentsük el a projektet, szinkronizáljuk a hiányzó dependecies-eket. Miután ez megtörtént, futtassuk az alkalmazást. Fontos hogy csak 33-as SDK-val működik!
+nyissunk meg az Android Studiot, majd másoljuk be a következő linket: https://github.com/M0rav/Fishing_Android.git. Mentsük el a projektet, szinkronizáljuk a hiányzó dependecies-eket. Miután ez megtörtént, futtassuk az alkalmazást. Fontos hogy csak 33-as SDK-val működik!
 
 ### 
 
